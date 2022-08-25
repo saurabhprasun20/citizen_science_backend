@@ -1,7 +1,10 @@
 from flask import Flask
 from flask_pymongo import PyMongo
+from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app)
+
 mongodb_client = PyMongo(app, uri="mongodb://localhost:27017/citizen-science")
 db = mongodb_client.db
 
